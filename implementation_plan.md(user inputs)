@@ -1,0 +1,28 @@
+# Dynamic Data Storage and Analysis
+
+The user requested to stop using hardcoded data and instead implement a way to store user inputs and perform analysis on them in the Streamlit app.
+
+## Proposed Changes
+
+We will use CSV files to store data locally within the `data/` directory.
+
+### app.py
+- **Storage Utility Functions**: Add functions to read/write from `data/live_classifications.csv` and `data/live_incidents.csv`.
+- **Tab 1 (Classification)**:
+  - Add logic to append the user's simulated input, classification result, and timestamp into `data/live_classifications.csv` upon clicking "Classify Message".
+- **Tab 3 (Logistics Commander)**:
+  - Remove the hardcoded `incidents` list.
+  - Add an input form (using `st.form` or columns) to allow the user to add a new incident (Location, People, Age Message, Need, Urgency).
+  - Save new incidents to `data/live_incidents.csv`.
+  - Load the stored incidents to perform the CoT/ToT routing analysis instead of using the hardcoded ones.
+- **New Tab (Analytics / Dashboard)**:
+  - Create a new tab (e.g., `📊 5. Live Dashboard`.
+  - Read from the CSV files and render dynamic charts (e.g., metric cards, bar charts for incidents per district, total victims).
+
+## Verification Plan
+
+### Manual Verification
+- The Streamlit app is currently running in the background. The user will be asked to interacting with it in their browser (`http://localhost:8501` usually):
+  1. Go to Tab 1, enter a test message, and click "Classify". Verify it appears in the Dashboard tab.
+  2. Go to Tab 3, add a new incident via the form. Verify the routing calculates based on the new incident.
+  3. Go to the new Live Dashboard tab and verify charts reflect the dynamically added data.
