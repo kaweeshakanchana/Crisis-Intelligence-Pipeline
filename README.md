@@ -9,6 +9,8 @@ Operation Ditwah is a specialized AI pipeline designed for the **Disaster Manage
 
 The core objective is to build a **Reliable, Safe, and Efficient** intelligence system using Advanced Prompt Engineering and robust LLM orchestration.
 
+live: https://crisis-intelligence-pipeline-7eorjc4gv7pgjus75kqdxf.streamlit.app/
+
 ## 🚀 Key Features
 
 * 🚨 **Few-Shot SOS Classification:** Distinguishes real emergency calls from general news noise with high accuracy.
